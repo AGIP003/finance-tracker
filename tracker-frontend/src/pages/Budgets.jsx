@@ -7,7 +7,6 @@ function Budgets() {
   const { formatCurrency } = useAdjustedCurrency();
   const [budgetList, setBudgetList] = useState(budgets);
   const activeBudget = budgetList[0];
-  const plannedTotal = getBudgetTotal(activeBudget.items);
   const checkedTotal = getBudgetTotal(activeBudget.items.filter((item) => item.checked));
   const remaining = activeBudget.targetAmount - checkedTotal;
   const checkedCount = activeBudget.items.filter((item) => item.checked).length;
